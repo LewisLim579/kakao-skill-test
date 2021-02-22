@@ -4,6 +4,7 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 
 const apiRouter = express.Router();
+const PORT = process.env.PORT
 
 app.use(logger('dev', {}));
 app.use(bodyParser.json());
@@ -45,7 +46,7 @@ apiRouter.get('/sayHello', function(req, res) {
 
 
 
-  app.listen(3000, function() {
+  app.listen(PORT, function() {
     console.log('Example skill server listening on port 3000!');
   });
 
