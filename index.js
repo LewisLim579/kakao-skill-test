@@ -30,14 +30,10 @@ apiRouter.get('/', function(req, res) {
 apiRouter.get('/sayHello', function(req, res) {
     const responseBody = {
       version: "2.0",
-      template: {
-        outputs: [
-          {
-            simpleText: {
-              text: "hello I'm Ryan"
-            }
-          }
-        ]
+      data: {
+        "msg":"HI",
+        "name":"Ryan",
+        "position":"Senior Managing Director"
       }
     };
   
@@ -47,14 +43,10 @@ apiRouter.get('/sayHello', function(req, res) {
   apiRouter.post('/sayHello', function(req, res) {
     const responseBody = {
       version: "2.0",
-      template: {
-        outputs: [
-          {
-            simpleText: {
-              text: "hello I'm Ryan"
-            }
-          }
-        ]
+      data: {
+        "msg":"HI",
+        "name":"Ryan",
+        "position":"Senior Managing Director"
       }
     };
   
