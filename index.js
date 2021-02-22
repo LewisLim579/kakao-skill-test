@@ -10,39 +10,8 @@ app.use(logger('dev', {}));
 app.use(bodyParser.json());
 app.use('/api', apiRouter);
 
-apiRouter.get('/', function(req, res) {
-    const responseBody = {
-      version: "2.0",
-      template: {
-        outputs: [
-          {
-            simpleText: {
-              text: "기본index포트 "
-            }
-          }
-        ]
-      }
-    };
-  
-    res.status(200).send(responseBody);
-  });
-
-apiRouter.get('/sayHello', function(req, res) {
-    const responseBody = {
-      version: "2.0",
-      data: {
-        "msg":"HI",
-        "name":"Ryan",
-        "position":"Senior Managing Director"
-      }
-    };
-  
-    res.status(200).send(responseBody);
-  });
-
   apiRouter.post('/sayHello', function(req, res) {
-
-    console.log("이 로그로 파라메터 받아오나2222? "+ req.params.phonenum);
+    console.log("파라메터 확인 "+ req.body.action.params.phonenum);
     const responseBody = {
       version: "2.0",
       data: {
