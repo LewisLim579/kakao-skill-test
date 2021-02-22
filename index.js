@@ -41,6 +41,8 @@ apiRouter.get('/sayHello', function(req, res) {
   });
 
   apiRouter.post('/sayHello', function(req, res) {
+
+    console.log("이 로그로 파라메터 받아오나2222? "+ req.body);
     const responseBody = {
       version: "2.0",
       data: {
