@@ -4,7 +4,7 @@ const logger = require('morgan');
 const bodyParser = require('body-parser');
 
 const apiRouter = express.Router();
-app.set('port', (process.env.PORT || 3000));
+
 app.use(logger('dev', {}));
 app.use(bodyParser.json());
 app.use('/api', apiRouter);
