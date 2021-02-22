@@ -54,7 +54,7 @@ apiRouter.get('/sayHello', function(req, res) {
   });
   
   apiRouter.post('/showHello', function(req, res) {
-    console.log(req.body);
+    console.log("이 로그로 파라메터 받아오나? "+ req.body);
   
     const responseBody = {
       version: "2.0",
