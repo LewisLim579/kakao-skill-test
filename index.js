@@ -12,12 +12,15 @@ app.use('/api', apiRouter);
 
   apiRouter.post('/sayHello', function(req, res) {
     console.log("파라메터 확인 "+ req.body.action.params.phonenum);
+    var phonenum = req.body.action.params.phonenum;
+
     const responseBody = {
       version: "2.0",
       data: {
         "msg":"HI",
         "name":"Ryan",
-        "position":"Senior Managing Director"
+        "position":"Senior Managing Director",
+        "phonenum":phonenum
       }
     };
   
