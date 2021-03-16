@@ -10,8 +10,12 @@ const indexRoute      = require("./routes/index");
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + "/public"));
-app.use("/", indexRoute);
 
+
+//app.use("/", indexRoute);
+app.get('/', function (req, res) {
+  res.send('Hello World!');
+});
 
 
 app.use(logger('dev', {}));
