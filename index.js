@@ -8,6 +8,7 @@ const PORT = process.env.PORT
 
 app.use(logger('dev', {}));
 app.use(bodyParser.json());
+app.use('/public', serveStatic(path.join(__dirname,'HTML')));
 app.use('/api', apiRouter);
 
   apiRouter.post('/sayHello', function(req, res) {
