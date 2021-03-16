@@ -6,9 +6,13 @@ const bodyParser = require('body-parser');
 const apiRouter = express.Router();
 const PORT = process.env.PORT
 
+app.get('/', function(req, res){
+  res.send('Hello World');
+});
+
 app.use(logger('dev', {}));
 app.use(bodyParser.json());
-app.use('/public', serveStatic(path.join(__dirname,'HTML')));
+
 app.use('/api', apiRouter);
 
   apiRouter.post('/sayHello', function(req, res) {
