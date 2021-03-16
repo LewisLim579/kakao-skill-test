@@ -7,7 +7,7 @@ const apiRouter = express.Router();
 const PORT = process.env.PORT
 
 app.get('/', function(req, res){
-  res.send('Hello World');
+  res.render('/views/index.html');
 });
 
 app.use(logger('dev', {}));
