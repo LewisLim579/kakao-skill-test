@@ -6,8 +6,14 @@ const bodyParser = require('body-parser');
 const apiRouter = express.Router();
 const PORT = process.env.PORT
 
-app.get('/', function(req, res){
-  res.render('/views/index.html');
+// view 경로 설정
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+app.engine('html', require('ejs').renderFile);
+
+
+router.get('/', function(req, res, next) {
+  res.render('index.html');
 });
 
 app.use(logger('dev', {}));
