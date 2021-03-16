@@ -8,9 +8,7 @@ const PORT = process.env.PORT
 
 // view 경로 설정
 app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
-app.engine('html', require('ejs').renderFile);
-
+app.set('views ', path.join(__dirname,'views'));
 
 router.get('/', function(req, res, next) {
   res.render('index.html');
