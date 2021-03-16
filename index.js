@@ -6,8 +6,8 @@ const bodyParser = require('body-parser');
 const apiRouter = express.Router();
 const PORT = process.env.PORT
 
+app.use(express.static('views'));
 // view 경로 설정
-app.set('views', __dirname + '/views');
 app.set('views ', path.join(__dirname,'views'));
 
 router.get('/', function(req, res, next) {
