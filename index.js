@@ -6,13 +6,13 @@ const bodyParser = require('body-parser');
 const apiRouter = express.Router();
 const PORT = process.env.PORT
 
-app.use(express.static('views'));
-// view 경로 설정
-app.set('views ', path.join(__dirname,'views'));
+const indexRoute      = require("./routes/index");
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+app.use(express.static(__dirname + "/public"));
+app.use("/", indexRoute);
 
-router.get('/', function(req, res, next) {
-  res.render('index.html');
-});
+
 
 app.use(logger('dev', {}));
 app.use(bodyParser.json());
