@@ -12,11 +12,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + "/public"));
 
 
-//app.use("/", indexRoute);
-app.get('/', function (req, res) {
-  res.send('Hello World!');
-});
-
+app.use("/", indexRoute);
 
 app.use(logger('dev', {}));
 app.use(bodyParser.json());
